@@ -1,10 +1,12 @@
 data = []
+count = 0
 with open('reviews.txt', 'r') as f:
 	for line in f:
 		data.append(line)
-		print(len(data)) #这行的意思是，显示读行的进度 
-	    #每行读数据
-#因为print很花时间，所以如果要求打印出读到哪一行了，运行到结果的的速度会比较慢
+		count += 1 # 等于 count = count +1
+		if count % 1000 == 0: # count 除以 1000的余数是多少
+			print (len(data))
+
 print(len(data))
 
 print(data[0])
