@@ -24,3 +24,11 @@ for d in data:
 print('一共有',len(new),'笔留言长度小于100')
 print(new[0])
 print(new[19820])
+
+#提取关键词留言
+good = []
+for d in data: # d称呼每笔留言的变数名称
+	if 'good' in d:
+		good.append(d)
+print('一共有',len(good),'笔留言提到good')
+print(good[758])
