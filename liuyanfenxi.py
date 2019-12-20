@@ -1,7 +1,7 @@
 data = []
 count = 0
 with open('reviews.txt', 'r') as f:
-	for line in f:
+	for line in f: #for loop：把清单中的东西一个一个拿出来
 		data.append(line)
 		count += 1 # 等于 count = count +1
 		if count % 10000  == 0: # count 除以 1000的余数是多少
@@ -25,10 +25,13 @@ print('一共有',len(new),'笔留言长度小于100')
 print(new[0])
 print(new[19820])
 
-#提取关键词留言
-good = []
-for d in data: # d称呼每笔留言的变数名称
-	if 'good' in d:
-		good.append(d)
+#提取关键词留言 快写法（list comprehension)
+# output = [(number - 1) for number in reference if number % 2== 0]
+                #符合条件后    变数        清单          筛选条件   
+                #将这个装进output里     
+good = [d for d in data if 'good' in d]
+#good = [d + '123' for d in data if 'good' in d]
+#如果留言中有good，输出时，每隔留言后面加上123
+
 print('一共有',len(good),'笔留言提到good')
 print(good[758])
