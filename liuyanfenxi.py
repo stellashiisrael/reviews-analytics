@@ -15,3 +15,12 @@ for d in data: #每笔资料命名为d，每个d是一个字串
 
 print('留言的平均长度为', sum_len/len(data), '个字') #总长度除以数据条数
 
+#计算出，有多少笔留言字数小于100（筛选）
+#写for loop 筛选数据
+new = []
+for d in data:
+	if len(d) < 100:
+		new.append(d) #把d的这个留言装入new清单里
+print('一共有',len(new),'笔留言长度小于100')
+print(new[0])
+print(new[19820])
